@@ -1,30 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>2021最喜欢的虚拟主播</title>
+  <title>找出卷王！</title>
+  <script src="king_js.js"> </script>
+  <link rel="stylesheet" href="king_style.css">
 </head>
-<body style="background-color:lavenderblush;">
-  <h1 style="background-color:lightskyblue;">千幽Chiyuu - Bilibili</h1>
-
-  <sub>下图是可爱幽宝！（千幽Chiyuu）</sub><br>
-  <sup>点击右侧“bilibili”图标查看幽宝个人空间！</sup>
-  <a href="https://space.bilibili.com/690608691/" target="_blank"><img width="60px" height="40px" src="哔哩哔哩.png"></a><br>
-  <img src="幽宝.png" alt="千幽Chiyuu新衣装同人图">
-  <br>
-  图片来源：<a href="https://space.bilibili.com/22882554" target="_blank">玄玦LostEgo</a>
-
-  <h2 style="border-style:solid; border-width:1px">You bad bad.</h2>
-  <h3>You bad bad.</h3>
-  <h4>You bad bad.</h4>
-  <h5>You bad bad.</h5>
-  <h6>You bad bad.</h6>
-  <p style="color:red;">Paragraph 1: I'm red.</p><br>
-  <p>Paragraph 2.</p>
-  <b>Bold text.</b>
-  <i>Italic text.</i>
-  <u>Underlined text.</u>
-  <em>Emphasized text.</em>
-  <strong>Strong text.</strong><br>
+<body onload="getName()">
+  <div>
+    <h1 class="title">找出卷王！</h1>
+    <h2>——JavaScript Puzzle 作业</h2>
+    <ul>
+      <li class="topic">人物介绍</li>
+      <li>
+        <img src="小汗.png" width="120px" height="120px" alt="[照片]">
+        小汗：一名普通的学生，可能是由于体虚，额头上经常冒汗，有时候会说出一些阴阳怪气的话。
+      </li>
+      <li>
+        <img src="小牙.png" width="120px" height="120px" alt="[照片]">
+        小牙：一名普通的学生，有着整齐而洁白的牙齿并以此为傲，经常对他人露齿笑。
+      </li>
+      <li>
+        <img src="小怜.png" width="120px" height="120px" alt="[照片]">
+        小怜：一名普通的学生，眼中常常含满泪水，是因为对这教室爱得深沉。
+      </li>
+    </ul>
+    <b id="names">请输入姓名。</b>
+    <button onclick="getName()">更改姓名</button>
+    <ul>
+      <li class="topic">Day 0：准备日</li>
+      <li>规则：从第一天开始，你每天可以考察小汗、小牙、小怜三个人中的一个，请在三天时间内找出谁才是真正的卷王吧！</br>
+        准备好后点击按钮开始！</br>
+        <button onclick="startGame()" id="startGame" style="display:block">开始游戏</button>
+      </li>
+    </ul>
+    <ul id="day1" style="display:none">
+      <li class="topic">Day 1：考察日</li>
+      <li id="result1">第一天开始了，请选择你要考察的对象。</br>
+        <button onclick="choice1(11)">小汗</button>
+        <button onclick="choice1(12)">小牙</button>
+        <button onclick="choice1(13)">小怜</button>
+      </li>
+    </ul>
+    <ul id="day2" style="display:none">
+      <li class="topic">Day 2：考察日</li>
+      <li id="result2">第二天开始了，请选择你要考察的对象。</br>
+        <button onclick="choice2(21)">小汗</button>
+        <button onclick="choice2(22)">小牙</button>
+        <button onclick="choice2(23)">小怜</button>
+      </li>
+    </ul>
+    <ul id="day3" style="display:none">
+      <li class="topic">Day 3：考察日</li>
+      <li id="result3">第三天开始了，请选择你要考察的对象。</br>
+        <button onclick="choice3(31)">小汗</button>
+        <button onclick="choice3(32)">小牙</button>
+        <button onclick="choice3(33)">小怜</button>
+      </li>
+    </ul>
+    <ul id="day4" style="display:none">
+      <li class="topic">请做出你的最终选择</li>
+      <li id="result4">我认为卷王是：</br>
+        <button onclick="choice4(41)">小汗</button>
+        <button onclick="choice4(42)">小牙</button>
+        <button onclick="choice4(43)">小怜</button>
+      </li>
+      <li>
+        <a href="https://Sugai123.github.io">
+        <button id="again" style="display:none">再试一次</button></a>
+      </li>
+    </ul>
+  </div>
 </body>
 </html>
